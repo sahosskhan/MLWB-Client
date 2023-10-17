@@ -22,9 +22,11 @@ const Navbar = () => {
                     <a>Home</a>
                   </li>{" "}
                 </NavLink>
-                <li className="text-xl font-semibold ">
-                  <a>Add Product</a>
-                </li>
+                <NavLink to="/ProductAdd">
+                  <li className="text-xl font-semibold ">
+                    <a>Add Product</a>
+                  </li>
+                </NavLink>
                 <li className="text-xl font-semibold ">
                   <a>My Cart</a>
                 </li>
@@ -33,9 +35,8 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <h1>
-              <Logo></Logo>
-            </h1>
+
+            <Logo></Logo>
           </div>
           <div className="navbar-center hidden xl:flex">
             <ul className="menu menu-horizontal px-1">
@@ -44,9 +45,11 @@ const Navbar = () => {
                   <a>Home</a>
                 </li>{" "}
               </NavLink>
-              <li className="text-xl font-semibold ">
-                <a>Add Product</a>
-              </li>
+              <NavLink to="/ProductAdd">
+                <li className="text-xl font-semibold ">
+                  <a>Add Product</a>
+                </li>
+              </NavLink>
               <li className="text-xl font-semibold ">
                 <a>My Cart</a>
               </li>
@@ -56,7 +59,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <div className="dropdown dropdown-end mr-24 ">
+            <div className="dropdown dropdown-end lg:mr-10">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full border-none">
                   <img src="https://i.ibb.co/HDJMNSK/user.png" alt="" />

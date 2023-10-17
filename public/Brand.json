@@ -2,22 +2,22 @@
   {
     "id": 1,
     "brandImage": "https://i.ibb.co/QCd3VCV/Disney-logo.png",
-    "brandName": "Disney,"
+    "brandName": "Disney"
   },
   {
     "id": 2,
-    "brandImage": "https://i.ibb.co/dQyjSgL/Netflix-Logo.pngg",
+    "brandImage": "https://i.ibb.co/dQyjSgL/Netflix-Logo.png",
     "brandName": "Netflix"
   },
   {
     "id": 3,
-    "brandImage": "https://i.ibb.co/VW5kKcc/Warner-Bros-logo.png",
+    "brandImage": "https://i.ibb.co/C2Q4ghr/Warner-Bros-logo.png",
     "brandName": "Warner Bros"
   },
 
   {
     "id": 4,
-    "brandImage": "https://i.ibb.co/0Czvp40/sony.png",
+    "brandImage": "https://i.ibb.co/5rQgKdQ/sony.png",
     "brandName": "Sony Pictures"
   },
   {
