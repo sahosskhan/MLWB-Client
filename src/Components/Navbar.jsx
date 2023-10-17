@@ -30,9 +30,11 @@ const Navbar = () => {
                 <li className="text-xl font-semibold ">
                   <a>My Cart</a>
                 </li>
-                <li className="text-xl font-semibold ">
-                  <a>Login</a>
-                </li>
+                <NavLink to="/Login">
+                  <li className="text-xl font-semibold ">
+                    <a>Login</a>
+                  </li>
+                </NavLink>
               </ul>
             </div>
 
@@ -53,9 +55,11 @@ const Navbar = () => {
               <li className="text-xl font-semibold ">
                 <a>My Cart</a>
               </li>
-              <li className="text-xl font-semibold ">
-                <a>Login</a>
-              </li>
+              <NavLink to="/Login">
+                <li className="text-xl font-semibold ">
+                  <a>Login</a>
+                </li>
+              </NavLink>
             </ul>
           </div>
           <div className="navbar-end">

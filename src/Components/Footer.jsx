@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
         </aside>
 
-        <nav className="ml-20">
+        <nav className="lg:ml-20">
           <header className="footer-title text-2xl text-red-600">
             Services
           </header>
