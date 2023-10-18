@@ -1,24 +1,57 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React from "react";
 
 // eslint-disable-next-line react/prop-types
-const Brand = ({items}) => {
-    const {name, photo}= items || {};
-    return (
-        <div>
-            <div>
-      
-      <div className="card w-96 bg-red-200 ">
-        <figure className="h-44">
-          <img className="w-[70%]" src={photo} alt="Shoes" />
-        </figure>
-        <h2 className="mt-4 py-5 bg-red-500 rounded-lg text-center font-semibold text-2xl text-white  ">
-          {name}
-        </h2>
-      </div>
-    </div>
+const Brand = ({ items }) => {
+  const { name, photo, brand, type, price, rating } = items || {};
+  return (
+    <div>
+      <section>
+        <div className="w-full lg:max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-red-800">
+          <img
+            className="object-cover  lg:h-[700px] w-full"
+            src={photo}
+            alt="avatar"
+          />
+
+          <div className="flex items-center px-6 py-3 bg-red-500">
+            <h1 className="text-lg font-semibold text-white">{name}</h1>
+          </div>
+
+          <div className="px-6 py-4">
+            <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
+              <h1 className="text-xl font-semibold text-red-800 dark:text-white">
+                <i className="fa-solid fa-circle-dot"></i> Content Brand:{" "}
+                {brand}
+              </h1>
+            </div>
+            <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
+              <h1 className="text-xl font-semibold text-red-800 dark:text-white">
+                <i className="fa-solid fa-tags"></i> Content Type: {type}
+              </h1>
+            </div>
+            <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
+              <h1 className="text-xl font-semibold text-red-800 dark:text-white">
+                <i className="fa-solid fa-money-check-dollar"></i> Ticket Price:{" "}
+                {price}
+              </h1>
+            </div>
+            <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
+              <h1 className="text-xl font-semibold text-red-800 dark:text-white">
+                <i className="fa-brands fa-imdb"></i> IMDb Rating: {rating}{" "}
+                <i className=" text-amber-500 fa-solid fa-star"></i>
+              </h1>
+            </div>
+
+            <div className="flex justify-center items-center md:gap-12 gap-1 lg:gap-28 mt-10">
+              <button className="btn bg-red-500 ">View Details</button>
+              <button className="btn bg-orange-500">Update Content</button>
+            </div>
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default Brand;
