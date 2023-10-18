@@ -15,7 +15,7 @@ const Home = () => {
       <div className="my-10">
         <h1 className="lg:text-5xl md:text-4xl text-2xl text-center text-black font-bold leading-snug">
           Our
-          <span className="text-red-700">Entertainment and Media Category</span>
+          <span className="text-red-700"> Entertainment & Media Category</span>
           <br />
           That We Provide For You
         </h1>
