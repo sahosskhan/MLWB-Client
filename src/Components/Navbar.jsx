@@ -22,7 +22,7 @@ const Navbar = () => {
                     <a>Home</a>
                   </li>{" "}
                 </NavLink>
-                <NavLink to="/ProductAdd">
+                <NavLink to="/productadd">
                   <li className="text-xl font-semibold ">
                     <a>Add Product</a>
                   </li>
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <li className="text-xl font-semibold ">
                   <a>My Cart</a>
                 </li>
-                <NavLink to="/Login">
+                <NavLink to="/login">
                   <li className="text-xl font-semibold ">
                     <a>Login</a>
                   </li>
@@ -47,7 +47,7 @@ const Navbar = () => {
                   <a>Home</a>
                 </li>{" "}
               </NavLink>
-              <NavLink to="/ProductAdd">
+              <NavLink to="/productadd">
                 <li className="text-xl font-semibold ">
                   <a>Add Product</a>
                 </li>
@@ -55,7 +55,7 @@ const Navbar = () => {
               <li className="text-xl font-semibold ">
                 <a>My Cart</a>
               </li>
-              <NavLink to="/Login">
+              <NavLink to="/login">
                 <li className="text-xl font-semibold ">
                   <a>Login</a>
                 </li>

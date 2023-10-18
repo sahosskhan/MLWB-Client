@@ -107,7 +107,7 @@ const SignIn = () => {
           </div>
 
           <div className="mt-6">
-            <Link to="/Register">
+            <Link to="/register">
               <button className="w-full mt-4 px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-lg hover:bg-red-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-50">
                 Sign Up
               </button>

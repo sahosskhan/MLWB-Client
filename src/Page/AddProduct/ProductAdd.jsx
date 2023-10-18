@@ -1,11 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
+import Swal from "sweetalert2";
+
 const ProductAdd = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
-  const Product = ["Movie", "Web Series", "Music", "Drama", "Cartoon Show"];
+  const Product = [
+    "Movie",
+    "Web Series",
+    "Music",
+    "Drama",
+    "Cartoon Show",
+    "Others",
+  ];
   const AddOption = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -37,6 +44,16 @@ const ProductAdd = () => {
       { name, description, brand, type, price, rating, photo } || {};
     console.log(addContent);
 
+    from.name.value = "";
+    from.description.value = "";
+
+    from.price.value = "";
+    from.rating.value = "";
+    from.photo.value = "";
+
+    setSelectedOption("");
+    setSelectedBrand("");
+    
     fetch("http://localhost:5000/Content", {
       method: "POST",
       headers: {
@@ -47,13 +64,13 @@ const ProductAdd = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.insertedId){
+        if (data.insertedId) {
           Swal.fire({
-            title: 'Success!',
-            text: 'Add Content Sucessfully',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-          })
+            title: "Success!",
+            text: "Add Content Sucessfully",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
         }
       });
   };

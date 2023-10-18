@@ -5,7 +5,7 @@ import Error from "../Page/Error";
 import ProductAdd from "../Page/AddProduct/ProductAdd";
 import SignIn from "./../Page/SignInUp/SignIn";
 import SignUp from "../Page/SignInUp/SignUp";
-
+import BrandProduct from "../Page/BrandsProduct/BrandProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,16 +18,21 @@ const router = createBrowserRouter([
         loader: () => fetch("/Brand.json"),
       },
       {
-        path: "/ProductAdd",
+        path: "/productadd",
         element: <ProductAdd></ProductAdd>,
       },
       {
-        path: "/Login",
+        path: "/login",
         element: <SignIn></SignIn>,
       },
       {
-        path: "/Register",
+        path: "/register",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/BrandProduct/:brand",
+        element: <BrandProduct></BrandProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/Content/${params?.brand}`),
       },
     ],
   },
