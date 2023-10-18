@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 const Root = () => {
   return (
-    <div className="container mx-auto">
+    <div className="dark:bg-gray-900">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

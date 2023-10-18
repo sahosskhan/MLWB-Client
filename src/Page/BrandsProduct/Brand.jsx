@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Brand = ({ items }) => {
@@ -7,7 +8,7 @@ const Brand = ({ items }) => {
   return (
     <div>
       <section>
-        <div className="w-full lg:max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-red-800">
+        <div className="w-full lg:max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-600">
           <img
             className="object-cover  lg:h-[700px] w-full"
             src={photo}
@@ -15,7 +16,7 @@ const Brand = ({ items }) => {
           />
 
           <div className="flex items-center px-6 py-3 bg-red-500">
-            <h1 className="text-lg font-semibold text-white">{name}</h1>
+            <h1 className="text-2xl font-semibold text-white">{name}</h1>
           </div>
 
           <div className="px-6 py-4">
@@ -44,8 +45,10 @@ const Brand = ({ items }) => {
             </div>
 
             <div className="flex justify-center items-center md:gap-12 gap-1 lg:gap-28 mt-10">
-              <button className="btn bg-red-500 ">View Details</button>
-              <button className="btn bg-orange-500">Update Content</button>
+              <button className="btn border-none bg-red-500 ">View Details</button>
+            <Link to='/update'>
+              <button className="btn border-none bg-orange-500">Update Content</button>
+              </Link>
             </div>
           </div>
         </div>

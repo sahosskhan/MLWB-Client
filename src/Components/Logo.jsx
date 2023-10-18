@@ -3,7 +3,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className=" flex items-center ">
+    <div className=" flex items-center lg:ml-10 ">
       <img
         className=" lg:w-[20%] md:w-[20%] w-[35%] rounded-full"
         src="https://i.ibb.co/grXsX0G/logo.webp"

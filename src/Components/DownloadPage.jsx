@@ -30,23 +30,23 @@ const DownloadPage = () => {
             </p>
 
             <div className="grid lg:grid-cols-3 md:grid-cols-3  grid-cols-2 gap-5">
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-brands fa-android"></i> Android
               </button>
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-brands fa-app-store-ios"></i> IOS
               </button>
 
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-brands fa-windows"></i> Windows
               </button>
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-brands fa-apple"></i> Mac OS
               </button>
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-brands fa-ubuntu"></i> Linux
               </button>
-              <button className="btn bg-red-300 lg:text-lg hover:bg-red-300">
+              <button className="btn border-none bg-red-300 lg:text-lg hover:bg-red-300">
                 <i className="fa-solid fa-tv"></i> Smart TV
               </button>
             </div>

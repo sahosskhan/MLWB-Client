@@ -78,7 +78,7 @@ const ProductAdd = () => {
   return (
     <div>
       <div className="mt-8 container mx-auto">
-        <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-red-100 rounded-xl shadow-2xl  lg:max-w-5xl shadow-gray-300/50 ">
+        <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-opacity-20 bg-white backdrop-blur-3xl border-none filter drop-shadow-md rounded-2xl p-2 lg:max-w-5xl shadow-gray-300/50 ">
           <h1 className="text-4xl font-bold text-center  text-red-700">
             Add Your Favorite Content To Enjoy More
           </h1>
