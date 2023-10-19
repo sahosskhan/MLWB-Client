@@ -7,6 +7,8 @@ import SignIn from "./../Page/SignInUp/SignIn";
 import SignUp from "../Page/SignInUp/SignUp";
 import BrandProduct from "../Page/BrandsProduct/BrandProduct";
 import UpdateContent from "../Page/UpdateContent";
+import MyCart from "../Page/MyCart";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/mycart",
+        element: <PrivateRoute><MyCart></MyCart>, </PrivateRoute> 
       },
       {
         path: "/brandproduct/:brand",

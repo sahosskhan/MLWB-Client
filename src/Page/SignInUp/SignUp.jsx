@@ -1,13 +1,73 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Firebase/AuthProvider";
+import Swal from "sweetalert2";
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
+
+  const { createUser } = useContext(AuthContext);
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const SignUpHandle = (e) => {
+    e.preventDefault();
+    setPassword("");
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    const name = form.get("name");
+    const photo = form.get("photo");
+    console.log(email, password, name);
+
+
+    if (password.length < 6) {
+      setPassword("Opps! Password must contain minimum 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password) || !/[!@#$%^&*]/.test(password)) {
+      setPassword(
+        "Opps! Password must contain special characters and capital latter"
+      );
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        Swal.fire({
+          title: "Wow!",
+          text: "You Sign Up Sucessfully",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
+        console.log(result.user);
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="my-20">
       <section className="">
         <div className="container flex items-center justify-center  px-6 mx-auto">
-          <form className="w-full max-w-lg ">
+          <div className="w-full max-w-lg ">
             <div className="flex justify-center mx-auto">
               <img
                 className="w-auto h-24 rounded-full"
@@ -21,6 +81,7 @@ const SignUp = () => {
 
             <div className="flex items-center justify-center mt-6"></div>
 
+            <form onSubmit={SignUpHandle}>
             <div className="relative flex items-center mt-8">
               <span className="absolute">
                 <svg
@@ -40,16 +101,19 @@ const SignUp = () => {
               </span>
               <input
                 type="text"
+                name="name"
                 className="block w-full py-3 text-black bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-red-400 dark:focus:border-red-300 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
               />
             </div>
+
             <div className="relative flex items-center mt-8">
               <span className="absolute">
                 <i className=" text-gray-300 ml-2 mt-1 text-lg fa-solid fa-link"></i>
               </span>
               <input
                 type="text"
+                name="photo"
                 className="block w-full py-3 text-black bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-red-400 dark:focus:border-red-300 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Photo URL"
               />
@@ -74,6 +138,7 @@ const SignUp = () => {
               </span>
               <input
                 type="email"
+                name="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-red-400 dark:focus:border-red-300 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email Address"
               />
@@ -100,13 +165,18 @@ const SignUp = () => {
                 type="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-red-400 dark:focus:border-red-300 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
+                name="password"
               />
             </div>
 
+            {password && <p className="text-red-700 font-bold mt-5  "> <i className="fa-solid fa-triangle-exclamation"></i> {password}</p>}
             <div className="mt-6">
-              <button className="w-full px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-                Sign Up
-              </button>
+            <button type="submit" className="w-full px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">SignUp</button>
+              </div>
+
+            </form>
+
+
               <div className="mt-6 text-center ">
                 <a
                   href="#"
@@ -115,13 +185,15 @@ const SignUp = () => {
                   Already have an account?
                 </a>
               </div>
-              <Link to="/login">
+             <div className="mt-6">
+             <Link to="/login">
                 <button className="w-full mt-4 px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-lg hover:bg-red-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-50">
-                  Login In
+                  LogIn
                 </button>
               </Link>
-            </div>
-          </form>
+             </div>
+            
+          </div>
         </div>
       </section>
     </div>
