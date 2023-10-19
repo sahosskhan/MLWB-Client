@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Brand = ({ items }) => {
-  const { name, photo, brand, type, price, rating } = items || {};
+  const { _id, name, photo, brand, type, price, rating } = items || {};
   return (
     <div>
       <section>
@@ -45,10 +45,11 @@ const Brand = ({ items }) => {
             </div>
 
             <div className="flex justify-center items-center md:gap-12 gap-1 lg:gap-28 mt-10">
+            <Link to={`/viewdetails/${_id}`}>
               <button className="btn border-none bg-red-500 ">View Details</button>
-            <Link to='/update'>
-              <button className="btn border-none bg-orange-500">Update Content</button>
               </Link>
+              <button className="btn border-none bg-orange-500">Update Content</button>
+              
             </div>
           </div>
         </div>

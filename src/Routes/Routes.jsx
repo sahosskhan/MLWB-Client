@@ -9,6 +9,7 @@ import BrandProduct from "../Page/BrandsProduct/BrandProduct";
 import UpdateContent from "../Page/UpdateContent";
 import MyCart from "../Page/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import ViewDetails from "../Page/ViewDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,7 +35,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/mycart",
-        element: <PrivateRoute><MyCart></MyCart>, </PrivateRoute> 
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute> 
+      },
+      {
+        path: "/viewdetails/:id",
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        loader: ({ params }) =>
+        fetch(`http://localhost:5000/contentS/${params?.id}`),
       },
       {
         path: "/brandproduct/:brand",
