@@ -53,14 +53,17 @@ const ProductAdd = () => {
 
     setSelectedOption("");
     setSelectedBrand("");
-    
-    fetch("http://localhost:5000/Content", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addContent),
-    })
+
+    fetch(
+      "https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/Content",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addContent),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

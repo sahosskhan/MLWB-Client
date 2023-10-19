@@ -35,25 +35,37 @@ const router = createBrowserRouter([
       },
       {
         path: "/mycart",
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute> 
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/viewdetails/:id",
-        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-        fetch(`http://localhost:5000/contentS/${params?.id}`),
+          fetch(
+            `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/contentS/${params?.id}`
+          ),
       },
       {
         path: "/brandproduct/:brand",
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/content/${params?.brand}`),
+          fetch(
+            `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/content/${params?.brand}`
+          ),
       },
       {
         path: "/update",
         element: <UpdateContent></UpdateContent>,
         // loader: ({ params }) =>
-        // fetch(`http://localhost:5000/content/${params?.id}`),
+        // fetch(`https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/content/${params?.id}`),
       },
     ],
   },

@@ -1,12 +1,71 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext, useEffect, useState } from "react";
+import AddCart from "./AddCart";
+import { AuthContext } from "../Firebase/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
-    return (
-        <div>
-            <h1 className='text-red-600 text-center text-5xl'>Welcome! To Cart</h1>
-        </div>
-    );
+  const { user } = useContext(AuthContext);
+
+  const url = `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/addCarts?email=${user?.email}`;
+  const [add, setAdd] = useState([]);
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setAdd(data));
+  }, [add]);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(
+          `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/addCarts/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your content has been deleted.",
+                "success"
+              );
+              const remaining = add.filter(() => add._id !== id);
+              setAdd(remaining);
+            }
+          });
+      }
+    });
+  };
+
+  return (
+    <div className="">
+      <h1 className="text-red-600 text-center font-black text-5xl">
+        Welcome! To Cart
+      </h1>
+
+      <div className=" lg:mb-[305px]  grid lg:grid-cols-3 grid-cols-1 gap-y-5 my-10 md:mx-40 lg:mx-64  ">
+        {add?.map((items) => (
+          <AddCart
+            key={add._id}
+            items={items}
+            handleDelete={handleDelete}
+          ></AddCart>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default MyCart;
