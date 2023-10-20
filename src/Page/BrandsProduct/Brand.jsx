@@ -10,7 +10,7 @@ const Brand = ({ items }) => {
       <section>
         <div className="w-full lg:max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-600">
           <img
-            className="object-cover  lg:h-[700px] w-full"
+            className="object-cover  lg:h-[650px] w-full"
             src={photo}
             alt="avatar"
           />
@@ -45,11 +45,15 @@ const Brand = ({ items }) => {
             </div>
 
             <div className="flex justify-center items-center md:gap-12 gap-1 lg:gap-28 mt-10">
-            <Link to={`/viewdetails/${_id}`}>
-              <button className="btn border-none bg-red-500 ">View Details</button>
+              <Link to={`/viewdetails/${_id}`}>
+                <button className="btn border-none bg-red-500 ">
+                  View Details
+                </button>
               </Link>
               <Link to={`/updatecontent/${_id}`}>
-              <button className="btn border-none bg-orange-500">Update Content</button>
+                <button className="btn border-none bg-orange-500">
+                  Update Content
+                </button>
               </Link>
             </div>
           </div>

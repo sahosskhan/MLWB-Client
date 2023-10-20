@@ -155,7 +155,7 @@ const UpdateContent = () => {
               </div>
 
               <input
-                className="btn btn-block mt-5 bg-red-500 text-white hover:bg-rose-500"
+                className="btn btn-block mt-5 border-none bg-red-500 text-white hover:bg-rose-500"
                 type="submit"
                 value="Update Content"
               />

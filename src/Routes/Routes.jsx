@@ -77,12 +77,7 @@ const router = createBrowserRouter([
             `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/content/${params?.brand}`
           ),
       },
-      {
-        path: "/update",
-        element: <UpdateContent></UpdateContent>,
-        // loader: ({ params }) =>
-        // fetch(`https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/content/${params?.id}`),
-      },
+     
     ],
   },
 ]);
