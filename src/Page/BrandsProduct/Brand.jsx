@@ -34,7 +34,7 @@ const Brand = ({ items }) => {
             <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
               <h1 className="text-xl font-semibold text-red-800 dark:text-white">
                 <i className="fa-solid fa-money-check-dollar"></i> Ticket Price:{" "}
-                {price}
+                {price} <i className="text-green-600 fa-solid fa-dollar-sign"></i>
               </h1>
             </div>
             <div className="flex items-center mt-4 text-red-700 dark:text-red-200">
