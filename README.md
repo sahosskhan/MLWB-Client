@@ -16,12 +16,14 @@
 - You can explore lots of content under any category when click.
 - You then you can enjoy any content first press view details then press add to cart/ watch.
 - You can see your carted content from  my cart routes navigation.
+- You can remove carted content from  my cart routes navigation.
 - You can update content from update button.
 - You can add your content from add product routes navigation.
 - In home section you can see some common frequently asked questions.
 - Also you can see our service in your native & comfortable device & source.
 - In This Website we are give top priority for our service like dark-theme for user who needs to access service in dark mode, also we are make better UI for user who visit our site & enjoy our service.
 - In this website user enjoy service & content then need to login via google or create a new account and login manually.
+- This Website Responsive In Mobile & Tablet Device.
 
 
 # Using Technologies:
