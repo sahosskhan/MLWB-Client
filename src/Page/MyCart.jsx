@@ -7,12 +7,13 @@ import Swal from "sweetalert2";
 const MyCart = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/addCarts?email=${user?.email}`;
+  const url = `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/addCarts?email=${user?.email}`;
   const [add, setAdd] = useState([]);
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAdd(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [add]);
 
   const handleDelete = (id) => {
@@ -27,7 +28,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/addCarts/${id}`,
+          `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/addCarts/${id}`,
           {
             method: "DELETE",
           }
@@ -55,7 +56,7 @@ const MyCart = () => {
         Welcome! To Cart
       </h1>
 
-      <div className=" lg:mb-[305px]  grid lg:grid-cols-3 grid-cols-1 gap-y-5 my-10 md:mx-40 lg:mx-64  ">
+      <div className=" lg:mb-[560px]  grid lg:grid-cols-3 grid-cols-1 gap-y-5 my-10 md:mx-40 lg:mx-64  ">
         {add?.map((items) => (
           <AddCart
             key={add._id}

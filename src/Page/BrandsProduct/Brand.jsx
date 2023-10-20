@@ -48,8 +48,9 @@ const Brand = ({ items }) => {
             <Link to={`/viewdetails/${_id}`}>
               <button className="btn border-none bg-red-500 ">View Details</button>
               </Link>
+              <Link to={`/updatecontent/${_id}`}>
               <button className="btn border-none bg-orange-500">Update Content</button>
-              
+              </Link>
             </div>
           </div>
         </div>

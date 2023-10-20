@@ -23,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/productadd",
-        element: <ProductAdd></ProductAdd>,
+        element: (
+          <PrivateRoute>
+            <ProductAdd></ProductAdd>{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -50,7 +54,19 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/contentS/${params?.id}`
+            `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/contents/${params?.id}`
+          ),
+      },
+      {
+        path: "/updatecontent/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateContent></UpdateContent>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/contents/${params?.id}`
           ),
       },
       {
@@ -58,14 +74,14 @@ const router = createBrowserRouter([
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/content/${params?.brand}`
+            `https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/content/${params?.brand}`
           ),
       },
       {
         path: "/update",
         element: <UpdateContent></UpdateContent>,
         // loader: ({ params }) =>
-        // fetch(`https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/content/${params?.id}`),
+        // fetch(`https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/content/${params?.id}`),
       },
     ],
   },

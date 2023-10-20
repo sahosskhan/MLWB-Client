@@ -17,7 +17,7 @@ const ViewDetails = () => {
     console.log(items);
 
     fetch(
-      "https://brand-shop-a10-server-8uj11cpgh-sahosskhan359-gmailcom.vercel.app/addCarts",
+      "https://brand-shop-a10-server-dvnu72qyk-sahosskhan359-gmailcom.vercel.app/addCarts",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
